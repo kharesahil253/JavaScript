@@ -15,7 +15,7 @@
 // console.log(b); //not defined error
 // console.log(a);
 
-// Third one
+// //Third one
 // function scopeTest() {
 //     if (true) {
 //       var x = 5;
@@ -42,29 +42,28 @@
 
 // Fifth
 // let x = 10;
-
 // function foo() {
 //   console.log(x); // not defined
 //   let x = 20;
 // }
-// foo();
+// foo()
 
+//Sixth
 // for (var i = 0; i < 3; i++) {
-//     setTimeout(() => console.log(i), 1000);
+//     setTimeout(() => console.log(i), 1000); // Temporal deadzone
 //   }
 
+//Seven
 // var a = 1;
-
 // function example() {
 //     console.log(a);
 //     var a = 2;
 //     console.log(a);
 //   }
-  
-// example();
+//    example();
 
+//Eight 
 // let a = 5;
-
 // {
 //   let a = 10;
 //   {
@@ -88,7 +87,7 @@
 // }
 
 // bar();
-// 
+
 
 var a = 1;
 function outer() {

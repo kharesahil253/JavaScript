@@ -1,9 +1,6 @@
-var a = 1;
-
-// function example() {
-//     console.log(a);
-//     var a = 2;
-//     console.log(a);
-//   }
-  
-// example();
+{
+    let a=10;
+    var b=20;
+}
+console.log(b); //not defined error
+console.log(a);
