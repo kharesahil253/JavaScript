@@ -1,4 +1,4 @@
-let day = 2
+let day1 = 2
 if (day === 1) {
     console.log("Monday")
 }
