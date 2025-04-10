@@ -1,16 +1,10 @@
-
-// function product(arr) {
-//     const pro = [];
-//     for (let i = 0; i < arr.length; i++) {
-//         let duc = 1;
-//         for (let j = 0; j < arr.length; j++) {
-//             if (i !== j) {
-//                 duc *= arr[j];
-//             }
+const combineAndSort = (...array) => {
+//     const rs = [];
+//     for (const val of array) {
+//         for (const item of val) {
+//             rs.push(item)
 //         }
-//         pro.push(duc)
 //     }
-//     return pro;
+//     return rs.sort();
 // }
-// const nums = [1, 2, 3, 4];
-// console.log(product(nums));
+// console.log(combineAndSort([3, 1], [5, 2], [4]))

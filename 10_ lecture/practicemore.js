@@ -32,29 +32,29 @@
 // Given a string s, return the longest palindromic substring.
 // Input: "babad" 
 // Output: "bab" or "aba"
-// function random(start, end, str) {
-//     while (start >= 0 && end < str.length && str[start] === str[end]) {
-//         start--;
-//         end++;
-//     }
-//     return str.slice(start + 1, end);
-// }
+function random(start, end, str) {
+    while (start >= 0 && end < str.length && str[start] === str[end]) {
+        start--;
+        end++;
+    }
+    return str.slice(start + 1, end);
+}
 
-// function finding(str) {
-//     let long = "";
-//     for (let i = 0; i < str.length; i++) {
-//         const odd = random(i, i, str);
-//         if (odd.length > long.length) long = odd;
+function finding(str) {
+    let long = "";
+    for (let i = 0; i < str.length; i++) {
+        const odd = random(i, i, str);
+        if (odd.length > long.length) long = odd;
 
-//         const even = random(i, i + 1, str);
-//         if (even.length > long.length) long = even;
-//     }
-//     return long;
-// }
+        const even = random(i, i + 1, str);
+        if (even.length > long.length) long = even;
+    }
+    return long;
+}
 
-// let str = "babad";
-// let longestPalindrome = finding(str);
-// console.log(longestPalindrome);
+let str = "babad";
+let longestPalindrome = finding(str);
+console.log(longestPalindrome);
 
 //Given an integer target, return true if target is in matrix or false otherwise.
 
@@ -62,16 +62,40 @@
 // Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 13
 // Output: false
 
-function checktar(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr.length; j++) {
-            if (arr[i][j] == target) {
-               return true;
-            }
+// function checktar(arr) {
+//     let n = arr.length;
+//     let m = arr[0].length;
+//     for (let i = 0; i < n; i++) {
+//         for (let j = 0; j < m; j++) {
+//             if (arr[i][j] == target) {
+//                 return true;
+//             }
+//         }
+//     }
+//     return false;
+// }
+function optchectarsearch(arr, target) {
+    let n = arr.length;
+    let m = arr[0].length;
+    let low = 0, high = n * m - 1;
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2)
+        let row = Math.floor(mid / m)
+        let col = mid % m;
+        let Midvalue = arr[row][col];
+        if (Midvalue === target) {
+            return true;
+        }
+        else if (Midvalue < target) {
+            low = mid + 1;
+        }
+        else {
+            high = mid - 1
         }
     }
-    return false;
+    return false
 }
 const mat = [[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 60]]
-let target = 13
-console.log(checktar(mat))
+let target = 7
+console.log(optchectarsearch(mat,target))
+

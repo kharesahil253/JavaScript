@@ -31,5 +31,3 @@ while(m!==0){
     m=Math.floor(m/10);
 }
 console.log(num)
-
-//
