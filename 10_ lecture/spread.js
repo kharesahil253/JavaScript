@@ -29,21 +29,21 @@
 // [].concat.array.sort()
 
 //Q-2
-const user = {
-    Name: "Alice",
-    age: 25,
-    city: "Delhi",
-    job: "Engineer"
-};
-function extractKeys(user, ...args) {
-    const res = []
-    for (const key of args) {
-        if (key in user) {
-            res[key] = user[key]
-        }
-    }
-    return res;
-}
-const data= extractKeys(user, "Name", "job")
-console.log(data)
+// const user = {
+//     Name: "Alice",
+//     age: 25,
+//     city: "Delhi",
+//     job: "Engineer"
+// };
+// function extractKeys(user, ...args) {
+//     const res = []
+//     for (const key of args) {
+//         if (key in user) {
+//             res[key] = user[key]
+//         }
+//     }
+//     return res;
+// }
+// const data= extractKeys(user, "Name", "job")
+// console.log(data)
 // // Output: { name: "Alice", job: "Engineer" }

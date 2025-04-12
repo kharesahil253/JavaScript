@@ -1,15 +1,15 @@
-// class Car {
-//     constructor(brand, color, type) {
-//         this.brand = brand;
-//         this.color = color;
-//         this.type = type;
-//     }
-//     display() {
-//         console.log(`My Car Brand is ${this.brand}`)
-//     }
-// }
-// const car = new Car("Scorpio")
-// car.display();
+class Car {
+    constructor(brand, color, type) {
+        this.brand = brand;
+        this.color = color;
+        this.type = type;
+    }
+    display() {
+        console.log(`My Car Brand is ${this.brand}`)
+    }
+}
+const car = new Car("Scorpio")
+car.display();
 
 
 
