@@ -1,13 +1,16 @@
+class Calculator {
+    static add(a, b) {
+        return a + b;
+    }
+    constructor(a, b) {
+        this.a = a;
+        this.b = b;
+    }
+    multiply() {
+        return this.a * this.b;
+    }
+}
 
-// class Calculator {
-//     static add(a, b) {
-//         return a + b;
-//     }
-//     multiply(a, b) {
-//         return a * b;
-//     }
-// }
-
-// const values = new Calculator();
-// console.log(values.multiply(3, 4));
-// console.log(Calculator.add(5, 6));
+const values = new Calculator(2,3);
+console.log(values.multiply());
+console.log(Calculator.add(5, 6));
