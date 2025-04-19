@@ -34,6 +34,7 @@ const order = (ord) => {
 }
 
 main(customer('Sahil', order('confirmed')));
+console.log("done");
 
 //Arrays with call back function
 const radii = [1, 2, 3, 4, 5];

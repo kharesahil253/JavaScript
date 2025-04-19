@@ -22,18 +22,27 @@ class BankAccount {
         if (this.amt <= 0) this.#balance += this.amt
     }
     getBalance() {
-        return 'My Ac Balance is ${this.#balance};
+        return `My Ac Balance is ${this.#balance}`;
     }
 }
 //inheritance
-class Vehicle{
-        constructor(brand){
-            this.brand=brand
-        }
-        getBrand(){
-            return'this.brand'
-        }
+class Vehicle {
+    constructor(brand) {
+        this.brand = brand;
+    }
+    getBrand() {
+        return this.brand;
+    }
 }
-// class Car extends Vehicle{
-//     constructor(color,)
-// }
+class Car extends Vehicle {
+    constructor(brand, color) {
+        super(brand); // Call parent class constructor
+        this.color = color;
+    }
+    getdetail() {
+        console.log(`The brand of the car is ${this.getBrand()} and color is ${this.color}`);
+    }
+}
+
+const c = new Car("Scorpio", "Black");
+c.getdetail();
