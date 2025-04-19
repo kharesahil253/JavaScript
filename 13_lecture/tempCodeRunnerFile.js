@@ -1,25 +1,6 @@
-const main = (testback) => {
-    setTimeout(() => {
-        testback();
-    }, 1000)
-}
+const passedStudents = students.filter(student => student.score >= 50)
+  .map((student => student.score))
+  .reduce((acc, curr, student) => acc + curr / student.length)
 
-const customer = (user, callback) => {
-    return () => {
-        setTimeout(() => {
-            console.log('Order for', user);
-            callback();
-        }, 2000);
-    }
-}
 
-const order = (ord) => {
-    return () => {
-        setTimeout(() => {
-            console.log("Order is", ord);
-        }, 1000);
-    }
-}
-
-main(customer('Sahil', order('confirmed')));
-console.log("done");
+console.log(passedStudents); 
