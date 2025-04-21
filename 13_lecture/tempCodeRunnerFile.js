@@ -1,12 +1,19 @@
-const students = [
-  { name: "Rahul", score: 45 },
-  { name: "Priya", score: 78 },
-  { name: "Ajay", score: 88 },
-  { name: "Neha", score: 32 },
-];
-//    Q: Use map, filter, reduce to calculate the average score of students who passed (score >= 50)
+const user = {
+    name: 'Sahil',
 
-const passedStudents = students.filter(student => student.score >= 50)
-  .map((student => student.score))
-  .reduce((acc, curr, _, arr) => acc + curr / arr.length, 0);
-console.log(passedStudents); 
+    introduce: function (name, city, country) {
+        this.city = city;
+        this.country = country;
+        console.log(`${this.name} lives in ${this.city}, and the country is ${this.country}`);
+    }
+};
+
+// Using call
+user.introduce.call(user, 'Sahil', 'Lucknow', 'India');
+
+// Using apply
+user.introduce.apply(user, ['Sahil', 'Lucknow', 'India']);
+
+// Using bind
+const bindFn = user.introduce.bind(user, 'Sahil', 'Lucknow', 'India');
+bindFn();
