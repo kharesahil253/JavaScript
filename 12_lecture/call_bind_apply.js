@@ -5,10 +5,24 @@ const user = {
     }
 }
 user.getName.call(user, 21); // call
-user.getName.apply(user, [21]) // apply array main
+user.getName.apply(user,[21]) // apply array main
 
 const bindfn = user.getName.bind(user);
-bindfn(21);
+bindfn(21);//bind
+
+//Bind function 
+const per1 = {
+    name: "king",
+    getname() {
+        console.log(`${this.name}`)
+    }
+}
+const per2 = {
+    name: "Lion"
+}
+const bindon = per1.getname.bind(per2);
+bindon();
+per1.getname();
 
 //-1
 // You have an object person with a method fullName(city, country).

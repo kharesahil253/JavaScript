@@ -1,8 +1,11 @@
-function multiplying(number) {
-    return this.num * number;
+const user = {
+    name: "Sahil",
+    getName(age) {
+        console.log(`Name: ${this.name}, Age: ${age}`);
+    }
 }
-const numpro = {
-    num: 5
-}
-const result = multiplying.call(numpro, 3)
-console.log(result);
+user.getName.call(user, 21); // call
+user.getName.apply(user,[21]) // apply array main
+
+const bindfn = user.getName.bind(user);
+bindfn(21);//bind

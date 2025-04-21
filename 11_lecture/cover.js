@@ -43,6 +43,5 @@ class Car extends Vehicle {
         console.log(`The brand of the car is ${this.getBrand()} and color is ${this.color}`);
     }
 }
-
 const c = new Car("Scorpio", "Black");
 c.getdetail();

@@ -27,10 +27,10 @@ const upper = Outer()
 upper();
 
 // var and let 
-for (var i = 1; i <= b; i++) {
+for (var i = 1; i <= 6; i++) {
     function inner(index) {
         setTimeout(function () {
-            console.log("Index")
+                console.log(i)
         }, index = 1000)
     }
     inner();
