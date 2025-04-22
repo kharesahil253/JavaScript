@@ -1,19 +1,22 @@
-const user = {
-    name: 'Sahil',
-
-    introduce: function (name, city, country) {
-        this.city = city;
-        this.country = country;
-        console.log(`${this.name} lives in ${this.city}, and the country is ${this.country}`);
+class Person {
+    #ssn;
+    constructor(name, ssn) {
+        this.name = name;
+        this.#ssn = ssn;
     }
-};
-
-// Using call
-user.introduce.call(user, 'Sahil', 'Lucknow', 'India');
-
-// Using apply
-user.introduce.apply(user, ['Sahil', 'Lucknow', 'India']);
-
-// Using bind
-const bindFn = user.introduce.bind(user, 'Sahil', 'Lucknow', 'India');
-bindFn();
+    get() {
+        return `${this.name} the ${this.#ssn}`;
+    }
+}
+class Employee extends Person {
+    constructor(name, ssn, Employeeid) {
+        super(name, ssn);
+        this.Employeeid = Employeeid;
+    }
+    getDetails() {
+        return `${this.get()} and ${this.Employeeid}`
+    }
+}
+const e1 = new Employee('Sahil', 1, 12);
+const ans = e1.getDetails();
+console.log(ans);

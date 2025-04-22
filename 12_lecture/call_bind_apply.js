@@ -1,43 +1,44 @@
 const user = {
-    name: "Sahil",
-    getName(age) {
-        console.log(`Name: ${this.name}, Age: ${age}`);
-    }
+    name: "Sahil"
+};
+getName = (age) => {
+    console.log(`Name: ${this.name}, Age: ${age}`);
 }
-user.getName.call(user, 21); // call
-user.getName.apply(user,[21]) // apply array main
 
-const bindfn = user.getName.bind(user);
+getName.call(user, 21); // call
+getName.apply(user, [21]) // apply array main
+
+const bindfn = getName.bind(user);
 bindfn(21);//bind
 
 //Bind function 
 const per1 = {
     name: "king",
-    getname() {
-        console.log(`${this.name}`)
-    }
+};
+function getname() {
+    console.log(`${this.name}`)
 }
 const per2 = {
     name: "Lion"
 }
-const bindon = per1.getname.bind(per2);
+const bindon = getname.bind(per1);
 bindon();
-per1.getname();
+
 
 //-1
 // You have an object person with a method fullName(city, country).
 // There is another object user with firstName and lastName properties.
 // Write a code using the call() method to call the fullName method using the user object's data and print the full name along with the city and country.
-const user1 = {
-    informs: function (city, country) {
+const person = {
+    fullName: function (city, country) {
         console.log(`My Name is ${this.firstname} ${this.lastname} lives in ${city}, ${country}`)
     }
 }
-const name = {
+const user1 = {
     firstname: "Sahil",
     lastname: "Khare"
 }
-user1.informs.call(name, "Lucknow", "India")
+person.fullName.call(user1, "Lucknow", "India");
 
 //-2
 // Create a method greet(greeting, punctuation) in an object.

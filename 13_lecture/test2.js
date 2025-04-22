@@ -33,19 +33,28 @@ console.log(gien);
 
 //Q-2
 // Create a class Person with a private field #ssn (Social Security Number) and a public method getSSN(). Then, create a subclass Employee that inherits from Person and adds a property employeeId. Write a method in Employee to display all the details.
-// class Person {
-//     #ssn;
-//     getSSN(name) {
-//         this.name = name
-//     }
-// }
-// // class Employee extends Person {
-// //         this.employee = employee;
-
-// allinfo();
-//   }
-
-
+class Person {
+    #ssn;
+    constructor(name, ssn) {
+        this.name = name;
+        this.#ssn = ssn;
+    }
+    get() {
+        return `${this.name} the ${this.#ssn}`;
+    }
+}
+class Employee extends Person {
+    constructor(name, ssn, Employeeid) {
+        super(name, ssn);
+        this.Employeeid = Employeeid;
+    }
+    getDetails() {
+        return `${this.get()} and ${this.Employeeid}`
+    }
+}
+const e1 = new Employee('Sahil', 1, 12);
+const ans = e1.getDetails();
+console.log(ans);
 
 // You are given an object called user that contains a person's name.
 // You also have a function called introduce that introduces the person using their name, city, and country.
@@ -53,22 +62,19 @@ console.log(gien);
 // Use call to invoke the function immediately with user as the context and pass individual arguments for city and country.
 // Use apply to do the same but pass the arguments as an array.
 // Use bind to create a copy of the function with user set as the context and predefined values for city and country. Then invoke that function later.
-const user = {
-    name: 'Sahil',
+// const user = {
+//     name: 'Sahil',
+// };
 
-    introduce: function (name, city, country) {
-        this.city = city;
-        this.country = country;
-        console.log(`${this.name} lives in ${this.city}, and the country is ${this.country}`);
-    }
-};
+//  function (name, city, country) {
+
+//     console.log(`${this.name} lives in ${this.city}, and the country is ${this.country}`);
+// }
 
 // Using call
 user.introduce.call(user, 'Sahil', 'Lucknow', 'India');
-
 // Using apply
 user.introduce.apply(user, ['Sahil', 'Lucknow', 'India']);
-
 // Using bind
 const bindFn = user.introduce.bind(user, 'Sahil', 'Lucknow', 'India');
 bindFn();
