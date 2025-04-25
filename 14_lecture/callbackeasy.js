@@ -39,3 +39,35 @@ getUser(function (user) {
         })
     })
 })
+
+//Questions that are given
+// Create a custom higher-order function called processData that takes a value and a callback function.
+// Then simulate a real-life asynchronous operation like fetching user details, then getting their order details, then getting shipping details — all using nested callbacks and for this question first function call after 1 sec 2nd //funciton after 2sec and so on
+const main = (user, testback, t) => {
+    setTimeout(() => {
+        testback(user);
+    }, t * 1000)
+}
+
+const ProcessData1 = (callback) => {
+    return () => {
+        console.log(`Order for ${user}`);
+        main(user, callback, 1);
+    }
+}
+
+const order1 = (ord, callback) => {
+    return () => {
+        console.log(`Order is ${ord}`);
+        main(ord, callback, 2);
+    }
+}
+const shopping1 = (shop, callback) => {
+    return () => {
+        console.log("Item is");
+        console.log("done");
+        main(shop, callback, 3)
+    }
+}
+
+main(ProcessData1('Sahil', order1('confirmed', shopping1('Laptop'))));
