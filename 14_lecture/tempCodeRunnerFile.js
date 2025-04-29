@@ -5,3 +5,7 @@ const error = new Promise((_, rej) => setTimeout(() => rej("Error!"), 200));
 const res = Promise.any([fast, slow, error])
     .then((resut) => console.log(resut))
     .catch((er) => console.error(er));
+
+const res2 = Promise.race([fast, slow, error])
+    .then((re) => console.log(re))
+    .catch((non) => console.log(non));
