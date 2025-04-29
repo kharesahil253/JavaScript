@@ -1,19 +1,7 @@
-const pr = new Promise((res, rej) => {
-    setTimeout(() => {
-        res('Resolved');
-    },4000)
-})
+const fast = new Promise(res => setTimeout(() => res("Fast success"), 100));
+const slow = new Promise(res => setTimeout(() => res("Slow success"), 500));
+const error = new Promise((_, rej) => setTimeout(() => rej("Error!"), 200));
 
-const pr2 = new Promise(res => {
-    setTimeout(() => {
-        res('Once')
-    }, 1000)
-}
-)
-
-async function none() {
-    const v1 = await pr
-    const v2 = await pr2
-    console.log(v1, v2)
-}
-none()
+const res = Promise.any([fast, slow, error])
+    .then((resut) => console.log(resut))
+    .catch((er) => console.error(er));
