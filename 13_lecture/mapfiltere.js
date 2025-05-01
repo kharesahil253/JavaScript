@@ -8,10 +8,10 @@ const reducerNUm = arr.reduce((acc, curr) => acc + curr, 0);
 console.log(reducerNUm);
 
 // Foreach
-// arr.forEach((val, index) => {
-//     arr[index] = val * 2;
-// });
-// console.log(arr);
+arr.forEach((val, index) => {
+    arr[index] = val * 2;
+});
+console.log(arr);
 
 // Map
 const User = [

@@ -2,14 +2,22 @@
 // // Simulate API calls
 const fetchUser = () => Promise.resolve("User data");
 const fetchPosts = () => Promise.resolve("Post data");
-const fetchComments = () => Promise.resolve("Comment data");
-Promise.all([fetchPosts(), fetchUser(), fetchComments()])
-    .then(([x, y, z]) => {
-        console.log(x, y, z);
-    })
-    .catch((error) => {
-        console.log("Error fetching data", error);
-    });
+const fetchComments = () => Promise.resolve("Comment data"); 
+
+(async () => {
+    try {
+      const [user, posts, comments] = await Promise.all([
+        fetchUser(),
+        fetchPosts(),
+        fetchComments(),
+      ]);
+  
+      console.log(user, posts, comments);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  })();
+  
 
 //Q-2
 // Use Promise.allSettled to log the result of all API calls regardless of success or failure.
@@ -26,10 +34,16 @@ const fast = new Promise(res => setTimeout(() => res("Fast success"), 100));
 const slow = new Promise(res => setTimeout(() => res("Slow success"), 500));
 const error = new Promise((_, rej) => setTimeout(() => rej("Error!"), 200));
 
+//by any 
 const res = Promise.any([fast, slow, error])
     .then((resut) => console.log(resut))
     .catch((er) => console.error(er));
-
+// by race
 const res2 = Promise.race([fast, slow, error])
     .then((re) => console.log(re))
     .catch((non) => console.log(non));
+
+//Trying a fake API test from jason holder application ....
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then(response => response.json())
+    .then(json => console.log(json))

@@ -12,21 +12,21 @@
 // console.log(ans)
 
 //Q-1
-// combineAndSort([3, 1], [5, 2], [4]);
-// // Output: [1, 2, 3, 4, 5]
+combineAndSort([3, 1], [5, 2], [4]);
+// Output: [1, 2, 3, 4, 5]
 // Do not use flat(). Use spread and rest.
-// const combineAndSort = (...array) => {
-//     const rs = [];
-//     for (const val of array) {
-//         for (const item of val) {
-//             rs.push(item)
-//         }
-//     }
-//     return rs.sort();
-// }
-// console.log(combineAndSort([3, 1], [5, 2], [4]))
+const combineAndSort = (...array) => {
+    const rs = [];
+    for (const val of array) {
+        for (const item of val) {
+            rs.push(item)
+        }
+    }
+    return rs.sort();
+}
+console.log(combineAndSort([3, 1], [5, 2], [4]))
 
-// [].concat.array.sort()
+[].concat.array.sort()
 
 //Q-2
 // const user = {
