@@ -1,0 +1,25 @@
+*{
+    background-color: palevioletred;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h1{
+    font-size: 25px;
+    color: black;
+}
+button{
+    padding: 10px 7px;
+    color: wheat;
+    background-color:black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.box{
+    color: wheat;
+    padding: 10px 10px;
+    margin:6px;
+    font-size: 22px;
+    background-color: green;
+    cursor: pointer;
+}

@@ -1,34 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body color="black">
+  <body color="black">
     <div id="div1" class="divone">Healing the text</div>
     <div id="div2" class="divtwo">NONe of the above</div>
+    <ul class="lsr">
+      <li class="item">Have u created</li>
+    </ul>
+    <h4>
+      Enter Your Email
+      <input class="king" type="email" name="email" required="emailInput" />
+    </h4>
+    <div class="card">I want to clone it</div>
+    <div id="target">Want to replace it</div>
     <script>
-        // Write JavaScript to select the < div > with id box, then log the text content of its next element sibling. 
-       // Select the div with id "div1"
-       <!-- const div1 = document.getElementById("div1"); -->
+      // Write JavaScript to select the < div > with id box, then log the text content of its next element sibling.
 
-       // Get the next element sibling of div1
-         const nextSib = div1.nextElementSibling;
+      const div1 = document.getElementById("div1");
+      const nextSib = div1.nextElementSibling;
+      console.log(nextSib.textContent);
 
-     // Log the text content of the next sibling
-     console.log(nextSib.textContent);
-        //  Create a new < li > element with the text "New Item", and insert it after an existing < li > with class "item"
-            
-        //  Remove the first child element of a < ul > with id list
-            
-        //  Check if the < input > element with name "email" has a "required" attribute.If yes, remove it.
-            
-        // Clone an element with class "card" and replace another element with id "target" using the cloned node.i know two method haven't discuss in class but still you can try
+      //  Create a new < li > element with the text "New Item", and insert it after an existing < li > with class "item"
+      const adding = document.querySelector(".item");
+      const li = document.createElement("li");
+      li.textContent = "New Item";
+      adding.parentNode.insertBefore(li, adding.nextSibling); // Use wiseliy
+      console.log(li.textContent);
 
+      //  Remove the first child element of a < ul > with id list
+      const li2 = li.remove();
+      const firstele = document.getElementsByClassName("lsr");
+      const ro = firstele.firstElementChild;
+      firstele.removeChild;
+      console.log(firstele);
+
+      //  Check if the < input > element with name "email" has a "required" attribute.If yes, remove it.
+      const checkitall = document.querySelector(".king");
+      if (checkitall.hasAttribute("required")) {
+        checkitall.removeAttribute("required");
+        console.log("Attribute has been removed successfully");
+      } else {
+        console.log("No required attribute found ");
+      }
+
+      // Clone an element with class "card" and replace another element with id "target" using the cloned node.i know two method haven't discuss in class but still you can try
+      const clonit = document.querySelector(".card").cloneNode(true);
+      const target = document.getElementById("target"); 
+      target.parentNode.replaceChild(clonit, target);
+      console.log(target);
+      console.log(clonit);
     </script>
-</body>
-
+  </body>
 </html>
