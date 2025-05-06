@@ -1,0 +1,140 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f7f8fa;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  background-color:#2196f3;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: palevioletred;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+#inputtext {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.addbtn {
+  padding: 12px 20px;
+  border: none;
+  background: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.addbtn:hover {
+  background: #45a049;
+}
+
+.ptag {
+  color: red;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Notes list */
+.ullist {
+  list-style: none;
+  padding: 0;
+}
+
+.note-item {
+  background:yellow;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+
+.note-text {
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Buttons inside note */
+.edit-btn,
+.delete-btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.edit-btn {
+  background: #2196f3;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background: #1976d2;
+}
+
+.delete-btn {
+  background: #f44336;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background: #d32f2f;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .input-section {
+    flex-direction: column;
+  }
+
+  .addbtn {
+    width: 100%;
+  }
+
+  .note-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
