@@ -26,6 +26,7 @@ const createNote = (noteText) => {
         inputcon.value = noteP.textContent;
         addbtn.textContent = "Update";
         editingNote = noteP;
+        p.textContent = "";
     });
 
 
@@ -36,6 +37,7 @@ const createNote = (noteText) => {
         if (confirm('Are you sure you want to delete this note?')) {
             noteDiv.remove();
         }
+        p.textContent = "";
     });
 
     noteBar.appendChild(noteP);
@@ -60,7 +62,7 @@ const saveNotesToLocalStorage = () => {
 
 const getNotesFromLocalStorage = () => {
     const notes = localStorage.getItem('notes');
-    return notes ? JSON.parse(notes) : [];
+    return notes ? JSON.parse(notes) : []; //Getting the message local storage
 };
 
 const addNewNote = () => {
