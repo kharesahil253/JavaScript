@@ -1,4 +1,4 @@
-const first = document.querySelector('.first');
+const input = document.querySelector('.input');
 const buttons = document.querySelectorAll('.buttons button');
 let currentInput = '';
 
@@ -12,22 +12,22 @@ buttons.forEach(button => {
             calculate();
         } else {
             currentInput += value;
-            first.value = currentInput;
+            input.value = currentInput;
         }
     });
 });
 
 function clearDisplay() {
     currentInput = '';
-    first.value = '';
+    input.value = '';
 }
 
 function calculate() {
     try {
-        first.value = eval(currentInput);
+        input.value = eval(currentInput);
         currentInput = first.value;
     } catch (e) {
-        first.value = "Error";
+        input.value = "Error";
         currentInput = '';
     }
 }

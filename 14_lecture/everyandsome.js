@@ -16,7 +16,7 @@ console.log(isno) //one of them is true then true like OR operatoe
 // console.log(ans1); // true
 // console.log(ans2); // false create funciton for this
 const aplha = ["abcdefghijklmnopqrstuvwxyz"]
-const aplha2 =.toUpper(aplha);
+// const aplha2 =.toUpper(aplha);
 const panGram = (sentence) => {
 
 }
