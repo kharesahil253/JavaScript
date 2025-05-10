@@ -25,7 +25,7 @@ function clearDisplay() {
 function calculate() {
     try {
         input.value = eval(currentInput);
-        currentInput = first.value;
+        currentInput = input.value;
     } catch (e) {
         input.value = "Error";
         currentInput = '';
